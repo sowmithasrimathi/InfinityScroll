@@ -9,7 +9,7 @@ let photosArray = [];
 
 
 // unsplash api
-const count = 5;
+const count = 30;
 const apiKey = 're-iKbF4ZrMnFnCdKSWELPnSPO3uNdgDMYRGUeR-PbI';
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
@@ -20,7 +20,6 @@ function imageLoaded() {
     if (imagesLoaded === totalImages) {
         ready = true;
         loader.hidden = true;
-        count = 30;
     }
 }
 
@@ -35,6 +34,7 @@ function setAttributes(element, attributes) {
 function displayPhotos() {
     imagesLoaded = 0;
     totalImages = photosArray.length;
+
     // run function for each objects in photos array
     photosArray.forEach((photo) => {
         // create <a> to link to unsplash 
